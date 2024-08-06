@@ -1,2 +1,1 @@
-# jcoin-vesting
-Jcoin (JCN) Token Vesting
+# Jcoin (JCN) Token Vesting
