@@ -1,0 +1,59 @@
+{
+  "name": "@jcoinecosystems/jcoin-vesting",
+  "version": "1.0.0",
+  "description": "Jcoin (JCN) Token Vesting",
+  "keywords": [
+    "jcoinecosystems",
+    "jcoin",
+    "vesting"
+  ],
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Jcoins.io",
+    "email": "hi@jcoins.io",
+    "url": "https://jcoins.io"
+  },
+  "homepage": "https://github.com/jcoinecosystems/jcoin-vesting#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jcoinecosystems/jcoin-vesting.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jcoinecosystems/jcoin-vesting/issues",
+    "email": "hi@jcoins.io"
+  },
+  "scripts": {
+    "clean": "rimraf ./build/ && mkdirp ./build/ && rimraf ./flatten/ && mkdirp ./flatten/",
+    "precompile": "yarn clean",
+    "compile": "truffle compile",
+    "postcompile": "yarn run flatten",
+    "deploy": "truffle migrate --network",
+    "verify": "truffle run verify --verifiers=etherscan  --export-json --network",
+    "test": "truffle test --show-events=false",
+    "flatten": "waffle flatten",
+    "contract-size": "truffle run contract-size",
+    "ganache": "node ./scripts/ganache.js"
+  },
+  "files": [
+    "contracts",
+    "build"
+  ],
+  "dependencies": {
+    "@openzeppelin/contracts": "5.0.2"
+  },
+  "devDependencies": {
+    "@openzeppelin/merkle-tree": "1.0.6",
+    "@openzeppelin/test-helpers": "^0.5.16",
+    "@truffle/hdwallet-provider": "^2.1.15",
+    "dotenv": "^16.4.5",
+    "ethereum-waffle": "^4.0.10",
+    "ethers": "^6.13.1",
+    "ganache": "^7.9.2",
+    "mkdirp": "^3.0.1",
+    "rimraf": "^5.0.7",
+    "truffle": "^5.11.5",
+    "truffle-contract-size": "^2.0.1",
+    "truffle-plugin-verify": "^0.6.7"
+  }
+}

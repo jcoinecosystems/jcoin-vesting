@@ -1,0 +1,14 @@
+node_modules/
+
+build*
+flatten*
+
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+.DS_Store
+
+*.log
+.env
+.env*.local
